@@ -113,7 +113,7 @@
         <a
           class="font-['Space_Grotesk'] tracking-tight text-[#dee5ff] opacity-70 hover:text-[#d575ff] transition-colors duration-300"
           href="#"
-          >Community</a
+          >Docs</a
         >
         <a
           class="font-['Space_Grotesk'] tracking-tight text-[#dee5ff] opacity-70 hover:text-[#d575ff] transition-colors duration-300"
@@ -194,9 +194,8 @@
               Classify.
             </h1>
             <p class="text-xl text-on-surface-variant font-light mb-8 max-w-lg">
-              Our neural intelligence decodes the architecture of sound,
-              providing professional-grade genre classification with surgical
-              precision.
+              Our model decodes the architecture of sound, providing genre
+              classification with 70% approx precision.
             </p>
             <div class="flex gap-4">
               <button
@@ -229,10 +228,6 @@
                     >SYSTEM STATUS: ACTIVE</span
                   >
                 </div>
-                <span
-                  class="text-secondary font-bold text-sm tracking-widest uppercase"
-                  >Kernel 2.4.0</span
-                >
               </div>
               <div class="space-y-6">
                 <div
@@ -267,7 +262,7 @@
                     <div
                       class="text-2xl font-headline font-bold text-secondary"
                     >
-                      14ms
+                      5s
                     </div>
                   </div>
                 </div>
@@ -283,8 +278,8 @@
             <div class="text-center mb-16">
               <h2 class="text-4xl font-bold mb-4">The Neural Ear</h2>
               <p class="text-on-surface-variant">
-                Drop your soundscape into our engine. We accept .wav, .mp3, and
-                .aiff formats.
+                Drop your soundscape into our engine. We accept .wav and .mp3
+                formats.
               </p>
             </div>
 
@@ -306,7 +301,8 @@
                     Drag &amp; Drop Sound File
                   </h3>
                   <p class="text-on-surface-variant">
-                    Max file size 50MB. High resolution wav preferred.
+                    Max file size 1.5MB. High resolution wav preferred. 30s
+                    audio clip is accepted.
                   </p>
                 </div>
                 <div class="flex items-center gap-4 w-full max-w-xs">
@@ -333,9 +329,6 @@
                   </div>
                   <div>
                     <div class="text-sm font-bold">Analysis Profile</div>
-                    <div class="text-xs text-on-surface-variant">
-                      Global Standard (SVM-Kernel 2.0)
-                    </div>
                   </div>
                 </div>
 
@@ -376,44 +369,29 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div class="relative">
               <div
-                class="w-full aspect-square bg-surface-container-highest rounded-2xl relative overflow-hidden"
+                class="w-full aspect-square bg-surface-container-highest rounded-2xl relative overflow-hidden flex items-center justify-center"
               >
+                <!-- IMAGE -->
                 <img
-                  alt=""
-                  class="w-full h-full object-cover mix-blend-overlay opacity-40"
-                  src="confusion_matrix.png"
+                  src="/static/confusion_matrix.png"
+                  alt="Confusion Matrix"
+                  class="absolute inset-0 w-full h-full object-contain opacity-90"
                 />
+
+                <!-- OPTIONAL OVERLAY (light, not blocking) -->
+                <div class="absolute inset-0 bg-black/30"></div>
+
+                <!-- TEXT OVERLAY -->
                 <div
-                  class="absolute inset-0 p-8 flex flex-col justify-center items-center"
+                  class="relative z-10 p-6 text-center flex flex-col items-center justify-center"
                 >
-                  <div class="grid grid-cols-3 gap-2 w-full max-w-xs">
-                    <div
-                      class="aspect-square bg-primary/20 rounded-full blur-xl"
-                    ></div>
-                    <div
-                      class="aspect-square bg-secondary/20 rounded-full blur-xl"
-                    ></div>
-                    <div
-                      class="aspect-square bg-primary/20 rounded-full blur-xl"
-                    ></div>
-                    <div
-                      class="col-span-3 h-1 bg-gradient-to-r from-primary to-secondary my-4"
-                    ></div>
-                    <div
-                      class="aspect-square bg-secondary/20 rounded-full blur-xl"
-                    ></div>
-                    <div
-                      class="aspect-square bg-primary/20 rounded-full blur-xl"
-                    ></div>
-                    <div
-                      class="aspect-square bg-secondary/20 rounded-full blur-xl"
-                    ></div>
-                  </div>
-                  <div class="mt-8 text-center">
-                    <span class="text-sm font-mono text-primary"
-                      >RBF KERNEL MAPPING</span
-                    >
-                  </div>
+                  <span class="text-sm font-mono text-primary mb-2">
+                    MODEL PERFORMANCE
+                  </span>
+
+                  <span class="text-lg font-bold text-white">
+                    Confusion Matrix
+                  </span>
                 </div>
               </div>
             </div>

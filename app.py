@@ -7,6 +7,7 @@ from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
+from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.svm import SVC
@@ -37,6 +38,8 @@ model.fit(X_train, y_train)
 
 print("Model ready!")
 print("Model expects feature count:", X.shape[1])
+y_pred = model.predict(X_test)
+print(classification_report(y_test, y_pred, target_names=le.classes_))
 
 # ============================================================
 # FEATURE EXTRACTION
